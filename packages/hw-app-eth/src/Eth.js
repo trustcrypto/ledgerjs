@@ -1,6 +1,6 @@
 /********************************************************************************
- *   Ledger Node JS API
- *   (c) 2016-2017 Ledger
+ *   onlykey Node JS API
+ *   (c) 2016-2017 onlykey
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@
 
 // FIXME drop:
 import { splitPath, foreach } from "./utils";
-import { EthAppPleaseEnableContractData } from "@ledgerhq/errors";
-import type Transport from "@ledgerhq/hw-transport";
+import { EthAppPleaseEnableContractData } from "trustcrypto/errors";
+import type Transport from "trustcrypto/hw-transport";
 
 const remapTransactionRelatedErrors = e => {
   if (e && e.statusCode === 0x6a80) {
@@ -34,7 +34,7 @@ const remapTransactionRelatedErrors = e => {
  * Ethereum API
  *
  * @example
- * import Eth from "@ledgerhq/hw-app-eth";
+ * import Eth from "trustcrypto/hw-app-eth";
  * const eth = new Eth(transport)
  */
 export default class Eth {
@@ -124,7 +124,7 @@ export default class Eth {
    * @param {*} info: a blob from "erc20.js" utilities that contains all token information.
    *
    * @example
-   * import { byContractAddress } from "@ledgerhq/hw-app-eth/erc20"
+   * import { byContractAddress } from "trustcrypto/hw-app-eth/erc20"
    * const zrxInfo = byContractAddress("0xe41d2489571d322189246dafa5ebde1f4699f498")
    * if (zrxInfo) await appEth.provideERC20TokenInformation(zrxInfo)
    * const signed = await appEth.signTransaction(path, rawTxHex)

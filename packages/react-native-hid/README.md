@@ -1,13 +1,13 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-transport-u2f
+## trustcrypto/hw-transport-u2f
 
-Allows to communicate with Ledger Hardware Wallets.
+Allows to communicate with onlykey Hardware Wallets.
 
-**[React Native]** **(HID)** _Android_ – Ledger's native implementation.
+**[React Native]** **(HID)** _Android_ – onlykey's native implementation.
 
 ## API
 
@@ -32,7 +32,7 @@ Allows to communicate with Ledger Hardware Wallets.
 
 **Extends Transport**
 
-Ledger's React Native HID Transport implementation
+onlykey's React Native HID Transport implementation
 
 #### Parameters
 
@@ -41,7 +41,7 @@ Ledger's React Native HID Transport implementation
 #### Examples
 
 ```javascript
-import TransportHID from "@ledgerhq/react-native-hid";
+import TransportHID from "trustcrypto/react-native-hid";
 ...
 TransportHID.create().then(transport => ...)
 ```
@@ -74,7 +74,7 @@ Returns **any** Promise of devices
 
 #### listen
 
-Listen to ledger devices events
+Listen to onlykey devices events
 
 ##### Parameters
 
@@ -82,7 +82,7 @@ Listen to ledger devices events
 
 #### open
 
-Open a the transport with a Ledger device
+Open a the transport with a onlykey device
 
 ##### Parameters
 

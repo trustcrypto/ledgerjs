@@ -1,8 +1,8 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-## @ledgerhq/devices
+## trustcrypto/devices
 
-Logic for all Ledger devices.
+Logic for all onlykey devices.
 
 ## API
 
@@ -13,7 +13,7 @@ Logic for all Ledger devices.
 -   [createHIDframing](#createhidframing)
     -   [Parameters](#parameters)
 -   [IIGenericHID](#iigenerichid)
--   [ledgerUSBVendorId](#ledgerusbvendorid)
+-   [onlykeyUSBVendorId](#onlykeyusbvendorid)
 -   [getDeviceModel](#getdevicemodel)
     -   [Parameters](#parameters-1)
 -   [identifyUSBProductId](#identifyusbproductid)
@@ -39,9 +39,9 @@ Logic for all Ledger devices.
 The USB product IDs will be defined as MMII, encoding a model (MM) and an interface bitfield (II)
 
 -   Model
-    Ledger Nano S : 0x10
-    Ledger Blue : 0x00
-    Ledger Nano X : 0x40
+    onlykey Nano S : 0x10
+    onlykey Blue : 0x00
+    onlykey Nano X : 0x40
 
 -   Interface support bitfield
     Generic HID : 0x01
@@ -52,7 +52,7 @@ The USB product IDs will be defined as MMII, encoding a model (MM) and an interf
 
 Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
-### ledgerUSBVendorId
+### onlykeyUSBVendorId
 
 Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
 

@@ -1,8 +1,8 @@
 // @flow
 
-import { TransportError, DisconnectedDevice } from "@ledgerhq/errors";
+import { TransportError, DisconnectedDevice } from "trustcrypto/errors";
 import { Observable } from "rxjs";
-import { log } from "@ledgerhq/logs";
+import { log } from "trustcrypto/logs";
 
 const TagId = 0x05;
 

@@ -1,9 +1,9 @@
 //@flow
 
 import { sign, isSupported } from "u2f-api";
-import Transport from "@ledgerhq/hw-transport";
-import { log } from "@ledgerhq/logs";
-import { TransportError } from "@ledgerhq/errors";
+import Transport from "trustcrypto/hw-transport";
+import { log } from "trustcrypto/logs";
+import { TransportError } from "trustcrypto/errors";
 
 function wrapU2FTransportError(originalError, message, id) {
   const err = new TransportError(message, id);
@@ -82,7 +82,7 @@ function isTimeoutU2FError(u2fError) {
 /**
  * U2F web Transport implementation
  * @example
- * import TransportU2F from "@ledgerhq/hw-transport-u2f";
+ * import TransportU2F from "trustcrypto/hw-transport-u2f";
  * ...
  * TransportU2F.create().then(transport => ...)
  */
@@ -107,7 +107,7 @@ export default class TransportU2F extends Transport<null> {
       } else {
         observer.error(
           new TransportError(
-            "U2F browser support is needed for Ledger. " +
+            "U2F browser support is needed for onlykey. " +
               "Please use Chrome, Opera or Firefox with a U2F extension. " +
               "Also make sure you're on an HTTPS connection",
             "U2FNotSupported"
@@ -127,7 +127,7 @@ export default class TransportU2F extends Transport<null> {
   unwrap: boolean = true;
 
   /**
-   * static function to create a new Transport from a connected Ledger device discoverable via U2F (browser support)
+   * static function to create a new Transport from a connected onlykey device discoverable via U2F (browser support)
    */
   static async open(_: *, _openTimeout?: number = 5000): Promise<TransportU2F> {
     return new TransportU2F();
@@ -160,7 +160,7 @@ export default class TransportU2F extends Transport<null> {
         // the wrapping make error more usable and "printable" to the end user.
         throw wrapU2FTransportError(
           e,
-          "Failed to sign with Ledger device: U2F " + e.metaData.type,
+          "Failed to sign with onlykey device: U2F " + e.metaData.type,
           "U2F_" + e.metaData.code
         );
       } else {

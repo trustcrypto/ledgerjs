@@ -1,15 +1,15 @@
-package com.ledgerwallet.hid;
+package com.onlykeywallet.hid;
 
 import java.io.ByteArrayOutputStream;
 
-public class LedgerHelper {
+public class onlykeyHelper {
 
     private static final int TAG_APDU = 0x05;
 
     public static byte[] wrapCommandAPDU(int channel, byte[] command, int packetSize) throws Exception {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         if (packetSize < 3) {
-            throw new Exception("Can't handle Ledger framing with less than 3 bytes for the report");
+            throw new Exception("Can't handle onlykey framing with less than 3 bytes for the report");
         }
         int sequenceIdx = 0;
         int offset = 0;

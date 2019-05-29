@@ -1,4 +1,4 @@
-package com.ledgerwallet.hid;
+package com.onlykeywallet.hid;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -32,7 +32,7 @@ public class ReactHIDModule extends ReactContextBaseJavaModule {
     private final HashMap<String, HIDDevice> hidDevices = new HashMap<>();
     private static final String ACTION_USB_ATTACHED  = "android.hardware.usb.action.USB_DEVICE_ATTACHED";
     private static final String ACTION_USB_DETACHED  = "android.hardware.usb.action.USB_DEVICE_DETACHED";
-    private static final String ACTION_USB_PERMISSION = "com.ledgerwallet.hid.USB_PERMISSION";
+    private static final String ACTION_USB_PERMISSION = "com.onlykeywallet.hid.USB_PERMISSION";
 
     private BroadcastReceiver receiver;
 

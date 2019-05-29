@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-transport-node-hid",
+  "name": "trustcrypto/hw-transport-node-hid",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Node implementation of the communication layer, using node-hid",
+  "description": "onlykey Hardware Wallet Node implementation of the communication layer, using node-hid",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "hid",
     "node-hid",
     "NanoS",
@@ -13,22 +13,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/TransportNodeHid.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/devices": "^4.60.3",
-    "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/hw-transport": "^4.60.3",
-    "@ledgerhq/logs": "^4.60.3",
+    "trustcrypto/devices": "^4.60.3",
+    "trustcrypto/errors": "^4.60.0",
+    "trustcrypto/hw-transport": "^4.60.3",
+    "trustcrypto/logs": "^4.60.3",
     "lodash": "^4.17.11",
     "node-hid": "^0.7.8",
     "usb": "^1.6.0"

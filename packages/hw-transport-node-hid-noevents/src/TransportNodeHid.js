@@ -1,18 +1,18 @@
 //@flow
 
 import HID from "node-hid";
-import Transport from "@ledgerhq/hw-transport";
-import { log } from "@ledgerhq/logs";
+import Transport from "trustcrypto/hw-transport";
+import { log } from "trustcrypto/logs";
 import type {
   Observer,
   DescriptorEvent,
   Subscription
-} from "@ledgerhq/hw-transport";
-import { ledgerUSBVendorId } from "@ledgerhq/devices";
-import hidFraming from "@ledgerhq/devices/lib/hid-framing";
-import { identifyUSBProductId } from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
-import { TransportError, DisconnectedDevice } from "@ledgerhq/errors";
+} from "trustcrypto/hw-transport";
+import { onlykeyUSBVendorId } from "trustcrypto/devices";
+import hidFraming from "trustcrypto/devices/lib/hid-framing";
+import { identifyUSBProductId } from "trustcrypto/devices";
+import type { DeviceModel } from "trustcrypto/devices";
+import { TransportError, DisconnectedDevice } from "trustcrypto/errors";
 
 const filterInterface = device =>
   ["win32", "darwin"].includes(process.platform)
@@ -22,7 +22,7 @@ const filterInterface = device =>
 
 function getDevices(): Array<*> {
   // $FlowFixMe
-  return HID.devices(ledgerUSBVendorId, 0x0).filter(filterInterface);
+  return HID.devices(onlykeyUSBVendorId, 0x0).filter(filterInterface);
 }
 
 const isDisconnectedError = e =>
@@ -31,7 +31,7 @@ const isDisconnectedError = e =>
 /**
  * node-hid Transport minimal implementation
  * @example
- * import TransportNodeHid from "@ledgerhq/hw-transport-node-hid-noevents";
+ * import TransportNodeHid from "trustcrypto/hw-transport-node-hid-noevents";
  * ...
  * TransportNodeHid.create().then(transport => ...)
  */

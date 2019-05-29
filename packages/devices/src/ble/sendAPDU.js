@@ -1,7 +1,7 @@
 // @flow
 
 import { Observable } from "rxjs";
-import { log } from "@ledgerhq/logs";
+import { log } from "trustcrypto/logs";
 
 const TagId = 0x05;
 

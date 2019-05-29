@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-app-btc
+## trustcrypto/hw-app-btc
 
-Ledger Hardware Wallet BTC JavaScript bindings. Also supports many altcoins.
+onlykey Hardware Wallet BTC JavaScript bindings. Also supports many altcoins.
 
 ## API
 
@@ -64,7 +64,7 @@ Bitcoin API.
 #### Examples
 
 ```javascript
-import Btc from "@ledgerhq/hw-app-btc";
+import Btc from "trustcrypto/hw-app-btc";
 const btc = new Btc(transport)
 ```
 

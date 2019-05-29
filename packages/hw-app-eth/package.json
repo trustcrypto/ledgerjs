@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-app-eth",
+  "name": "trustcrypto/hw-app-eth",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Ethereum Application API",
+  "description": "onlykey Hardware Wallet Ethereum Application API",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "Ethereum",
     "eth",
     "NanoS",
@@ -13,20 +13,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/Eth.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/hw-transport": "^4.60.3"
+    "trustcrypto/errors": "^4.60.0",
+    "trustcrypto/hw-transport": "^4.60.3"
   },
   "devDependencies": {
     "flow-bin": "^0.98.1"

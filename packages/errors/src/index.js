@@ -59,12 +59,12 @@ export const LatestMCUInstalledError = createCustomErrorClass(
   "LatestMCUInstalledError"
 );
 export const UnknownMCU = createCustomErrorClass("UnknownMCU");
-export const LedgerAPIError = createCustomErrorClass("LedgerAPIError");
-export const LedgerAPIErrorWithMessage = createCustomErrorClass(
-  "LedgerAPIErrorWithMessage"
+export const onlykeyAPIError = createCustomErrorClass("onlykeyAPIError");
+export const onlykeyAPIErrorWithMessage = createCustomErrorClass(
+  "onlykeyAPIErrorWithMessage"
 );
-export const LedgerAPINotAvailable = createCustomErrorClass(
-  "LedgerAPINotAvailable"
+export const onlykeyAPINotAvailable = createCustomErrorClass(
+  "onlykeyAPINotAvailable"
 );
 export const ManagerAppAlreadyInstalledError = createCustomErrorClass(
   "ManagerAppAlreadyInstalled"
@@ -136,8 +136,8 @@ export const FeeRequired = createCustomErrorClass("FeeRequired");
 export const SyncError = createCustomErrorClass("SyncError");
 export const PairingFailed = createCustomErrorClass("PairingFailed");
 export const GenuineCheckFailed = createCustomErrorClass("GenuineCheckFailed");
-export const LedgerAPI4xx = createCustomErrorClass("LedgerAPI4xx");
-export const LedgerAPI5xx = createCustomErrorClass("LedgerAPI5xx");
+export const onlykeyAPI4xx = createCustomErrorClass("onlykeyAPI4xx");
+export const onlykeyAPI5xx = createCustomErrorClass("onlykeyAPI5xx");
 export const FirmwareOrAppUpdateRequired = createCustomErrorClass(
   "FirmwareOrAppUpdateRequired"
 );
@@ -228,7 +228,7 @@ export function TransportStatusError(statusCode: number) {
     "UNKNOWN_ERROR";
   const smsg = getAltStatusMessage(statusCode) || statusText;
   const statusCodeStr = statusCode.toString(16);
-  this.message = `Ledger device: ${smsg} (0x${statusCodeStr})`;
+  this.message = `onlykey device: ${smsg} (0x${statusCodeStr})`;
   this.stack = new Error().stack;
   this.statusCode = statusCode;
   this.statusText = statusText;

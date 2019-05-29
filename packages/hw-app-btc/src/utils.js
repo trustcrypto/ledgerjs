@@ -1,6 +1,6 @@
 /********************************************************************************
- *   Ledger Node JS API
- *   (c) 2016-2017 Ledger
+ *   onlykey Node JS API
+ *   (c) 2016-2017 onlykey
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -99,6 +99,6 @@ export function asyncWhile<T>(
   return Promise.resolve([]).then(iterate);
 }
 
-export const isLedgerDevice = (device: Object) =>
-  (device.vendorId === 0x2581 && device.productId === 0x3b7c) ||
-  device.vendorId === 0x2c97;
+export const isonlykeyDevice = (device: Object) =>
+  (device.vendorId === 0x16C0 && device.productId === 0x0486) ||
+  (device.vendorId === 0x1d50 && device.productId === 0x60fc);

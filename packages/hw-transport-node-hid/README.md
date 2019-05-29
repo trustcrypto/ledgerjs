@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-transport-node-hid
+## trustcrypto/hw-transport-node-hid
 
-Allows to communicate with Ledger Hardware Wallets.
+Allows to communicate with onlykey Hardware Wallets.
 
 **[Node]**/Electron **(HID)** – uses `node-hid` and `usb`.
 
@@ -46,7 +46,7 @@ node-hid Transport implementation
 #### Examples
 
 ```javascript
-import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
+import TransportNodeHid from "trustcrypto/hw-transport-node-hid";
 ...
 TransportNodeHid.create().then(transport => ...)
 ```

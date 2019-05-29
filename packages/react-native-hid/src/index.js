@@ -1,13 +1,13 @@
 //@flow
 import { NativeModules, DeviceEventEmitter } from "react-native";
-import { ledgerUSBVendorId, identifyUSBProductId } from "@ledgerhq/devices";
+import { onlykeyUSBVendorId, identifyUSBProductId } from "trustcrypto/devices";
 import {
   DisconnectedDeviceDuringOperation,
   DisconnectedDevice
-} from "@ledgerhq/errors";
-import { log } from "@ledgerhq/logs";
-import Transport from "@ledgerhq/hw-transport";
-import type { DescriptorEvent } from "@ledgerhq/hw-transport";
+} from "trustcrypto/errors";
+import { log } from "trustcrypto/logs";
+import Transport from "trustcrypto/hw-transport";
+import type { DescriptorEvent } from "trustcrypto/hw-transport";
 import { Subject, from, concat } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 
@@ -21,15 +21,15 @@ const disconnectedErrors = [
   "Attempt to invoke virtual method 'int android.hardware.usb.UsbDevice.getDeviceClass()' on a null object reference"
 ];
 
-const listLedgerDevices = async () => {
+const listonlykeyDevices = async () => {
   const devices = await NativeModules.HID.getDeviceList();
-  return devices.filter(d => d.vendorId === ledgerUSBVendorId);
+  return devices.filter(d => d.vendorId === onlykeyUSBVendorId);
 };
 
 const liveDeviceEventsSubject: Subject<DescriptorEvent<*>> = new Subject();
 
 DeviceEventEmitter.addListener("onDeviceConnect", (device: *) => {
-  if (device.vendorId !== ledgerUSBVendorId) return;
+  if (device.vendorId !== onlykeyUSBVendorId) return;
   const deviceModel = identifyUSBProductId(device.productId);
   liveDeviceEventsSubject.next({
     type: "add",
@@ -39,7 +39,7 @@ DeviceEventEmitter.addListener("onDeviceConnect", (device: *) => {
 });
 
 DeviceEventEmitter.addListener("onDeviceDisconnect", (device: *) => {
-  if (device.vendorId !== ledgerUSBVendorId) return;
+  if (device.vendorId !== onlykeyUSBVendorId) return;
   const deviceModel = identifyUSBProductId(device.productId);
   liveDeviceEventsSubject.next({
     type: "remove",
@@ -51,9 +51,9 @@ DeviceEventEmitter.addListener("onDeviceDisconnect", (device: *) => {
 const liveDeviceEvents = liveDeviceEventsSubject;
 
 /**
- * Ledger's React Native HID Transport implementation
+ * onlykey's React Native HID Transport implementation
  * @example
- * import TransportHID from "@ledgerhq/react-native-hid";
+ * import TransportHID from "trustcrypto/react-native-hid";
  * ...
  * TransportHID.create().then(transport => ...)
  */
@@ -77,17 +77,17 @@ export default class HIDTransport extends Transport<DeviceObj> {
    */
   static async list() {
     if (!NativeModules.HID) return Promise.resolve([]);
-    let list = await listLedgerDevices();
+    let list = await listonlykeyDevices();
     return list;
   }
 
   /**
-   * Listen to ledger devices events
+   * Listen to onlykey devices events
    */
   static listen(observer: *) {
     if (!NativeModules.HID) return { unsubscribe: () => {} };
     return concat(
-      from(listLedgerDevices()).pipe(
+      from(listonlykeyDevices()).pipe(
         mergeMap(devices =>
           from(
             devices.map(device => ({
@@ -103,7 +103,7 @@ export default class HIDTransport extends Transport<DeviceObj> {
   }
 
   /**
-   * Open a the transport with a Ledger device
+   * Open a the transport with a onlykey device
    */
   static async open(deviceObj: DeviceObj) {
     try {

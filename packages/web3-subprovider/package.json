@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/web3-subprovider",
+  "name": "trustcrypto/web3-subprovider",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Ethereum Web3 subprovider",
+  "description": "onlykey Hardware Wallet Ethereum Web3 subprovider",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "Ethereum",
     "eth",
     "NanoS",
@@ -16,21 +16,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-app-eth": "^4.60.3",
-    "@ledgerhq/hw-transport": "^4.60.3",
-    "@ledgerhq/hw-transport-u2f": "^4.60.3",
+    "trustcrypto/hw-app-eth": "^4.60.3",
+    "trustcrypto/hw-transport": "^4.60.3",
+    "trustcrypto/hw-transport-u2f": "^4.60.3",
     "ethereumjs-tx": "^1.3.7",
     "strip-hex-prefix": "^1.0.0",
     "web3-provider-engine": "^14.1.0"

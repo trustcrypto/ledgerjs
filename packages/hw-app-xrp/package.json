@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-app-xrp",
+  "name": "trustcrypto/hw-app-xrp",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Ripple Application API",
+  "description": "onlykey Hardware Wallet Ripple Application API",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "Ripple",
     "xrp",
     "NanoS",
@@ -13,19 +13,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/Xrp.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport": "^4.60.3",
+    "trustcrypto/hw-transport": "^4.60.3",
     "bip32-path": "0.4.2"
   },
   "devDependencies": {

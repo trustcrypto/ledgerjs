@@ -1,6 +1,6 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
-import { log } from "@ledgerhq/logs";
+import Transport from "trustcrypto/hw-transport";
+import { log } from "trustcrypto/logs";
 import type { RecordStore } from "./RecordStore";
 
 export default (recordStore: RecordStore): Class<Transport<*>> => {

@@ -1,18 +1,18 @@
 {
-  "name": "@ledgerhq/devices",
-  "version": "4.60.3",
-  "description": "Ledger devices",
+  "name": "trustcrypto/devices",
+  "version": "1.0.0",
+  "description": "onlykey devices",
   "keywords": [
-    "Ledger"
+    "onlykey"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
@@ -22,8 +22,8 @@
     "flow-bin": "^0.98.1"
   },
   "dependencies": {
-    "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/logs": "^4.60.3",
+    "trustcrypto/errors": "^4.60.0",
+    "trustcrypto/logs": "^4.60.3",
     "rxjs": "^6.5.2"
   },
   "scripts": {

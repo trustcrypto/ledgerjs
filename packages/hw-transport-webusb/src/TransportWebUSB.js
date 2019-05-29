@@ -1,24 +1,24 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "trustcrypto/hw-transport";
 import type {
   Observer,
   DescriptorEvent,
   Subscription
-} from "@ledgerhq/hw-transport";
-import hidFraming from "@ledgerhq/devices/lib/hid-framing";
-import { identifyUSBProductId } from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
-import { log } from "@ledgerhq/logs";
+} from "trustcrypto/hw-transport";
+import hidFraming from "trustcrypto/devices/lib/hid-framing";
+import { identifyUSBProductId } from "trustcrypto/devices";
+import type { DeviceModel } from "trustcrypto/devices";
+import { log } from "trustcrypto/logs";
 import {
   TransportOpenUserCancelled,
   TransportInterfaceNotAvailable,
   DisconnectedDeviceDuringOperation,
   DisconnectedDevice
-} from "@ledgerhq/errors";
+} from "trustcrypto/errors";
 import {
-  getLedgerDevices,
-  getFirstLedgerDevice,
-  requestLedgerDevice,
+  getonlykeyDevices,
+  getFirstonlykeyDevice,
+  requestonlykeyDevice,
   isSupported
 } from "./webusb";
 
@@ -29,7 +29,7 @@ const endpointNumber = 3;
 /**
  * WebUSB Transport implementation
  * @example
- * import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
+ * import TransportWebUSB from "trustcrypto/hw-transport-webusb";
  * ...
  * TransportWebUSB.create().then(transport => ...)
  */
@@ -53,7 +53,7 @@ export default class TransportWebUSB extends Transport<USBDevice> {
   /**
    * List the WebUSB devices that was previously authorized by the user.
    */
-  static list = getLedgerDevices;
+  static list = getonlykeyDevices;
 
   /**
    * Actively listen to WebUSB devices and emit ONE device
@@ -65,7 +65,7 @@ export default class TransportWebUSB extends Transport<USBDevice> {
     observer: Observer<DescriptorEvent<USBDevice>>
   ): Subscription => {
     let unsubscribed = false;
-    getFirstLedgerDevice().then(
+    getFirstonlykeyDevice().then(
       device => {
         if (!unsubscribed) {
           const deviceModel = identifyUSBProductId(device.productId);
@@ -87,7 +87,7 @@ export default class TransportWebUSB extends Transport<USBDevice> {
    * Similar to create() except it will always display the device permission (even if some devices are already accepted).
    */
   static async request() {
-    const device = await requestLedgerDevice();
+    const device = await requestonlykeyDevice();
     return TransportWebUSB.open(device);
   }
 
@@ -95,13 +95,13 @@ export default class TransportWebUSB extends Transport<USBDevice> {
    * Similar to create() except it will never display the device permission (it returns a Promise<?Transport>, null if it fails to find a device).
    */
   static async openConnected() {
-    const devices = await getLedgerDevices();
+    const devices = await getonlykeyDevices();
     if (devices.length === 0) return null;
     return TransportWebUSB.open(devices[0]);
   }
 
   /**
-   * Create a Ledger transport with a USBDevice
+   * Create a onlykey transport with a USBDevice
    */
   static async open(device: USBDevice) {
     await device.open();

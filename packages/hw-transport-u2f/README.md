@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-transport-u2f
+## trustcrypto/hw-transport-u2f
 
-Allows to communicate with Ledger Hardware Wallets.
+Allows to communicate with onlykey Hardware Wallets.
 
 **[Web]** **(U2F)** (legacy but reliable) – FIDO U2F api. [check browser support](https://caniuse.com/u2f).
 
@@ -35,7 +35,7 @@ U2F web Transport implementation
 #### Examples
 
 ```javascript
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
 ...
 TransportU2F.create().then(transport => ...)
 ```
@@ -64,7 +64,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 #### open
 
-static function to create a new Transport from a connected Ledger device discoverable via U2F (browser support)
+static function to create a new Transport from a connected onlykey device discoverable via U2F (browser support)
 
 ##### Parameters
 

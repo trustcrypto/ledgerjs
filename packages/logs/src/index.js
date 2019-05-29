@@ -56,4 +56,4 @@ function dispatch(log: Log) {
 }
 
 // for debug purpose
-global.__ledgerLogsListen = listen;
+global.__onlykeyLogsListen = listen;

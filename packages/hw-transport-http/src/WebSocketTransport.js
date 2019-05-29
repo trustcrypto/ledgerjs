@@ -1,7 +1,7 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
-import { TransportError } from "@ledgerhq/errors";
-import { log } from "@ledgerhq/logs";
+import Transport from "trustcrypto/hw-transport";
+import { TransportError } from "trustcrypto/errors";
+import { log } from "trustcrypto/logs";
 
 const WebSocket = global.WebSocket || require("ws");
 

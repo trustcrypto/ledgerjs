@@ -1,6 +1,6 @@
 import Web3 from "web3";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
-import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
+import createonlykeySubprovider from "trustcrypto/web3-subprovider";
 import ProviderEngine from "web3-provider-engine";
 import FetchSubprovider from "web3-provider-engine/subproviders/fetch";
 
@@ -18,16 +18,16 @@ export const getReadOnlyWeb3 = async () => {
 // we define all wallets exposing a way to get a web3 instance. feel free to adapt.
 export default [
   {
-    name: "Ledger device",
-    // create a web3 with the ledger device
+    name: "onlykey device",
+    // create a web3 with the onlykey device
     getWeb3: () => {
       const engine = new ProviderEngine();
       const getTransport = () => TransportU2F.create();
-      const ledger = createLedgerSubprovider(getTransport, {
+      const onlykey = createonlykeySubprovider(getTransport, {
         networkId,
         accountsLength: 5
       });
-      engine.addProvider(ledger);
+      engine.addProvider(onlykey);
       engine.addProvider(new FetchSubprovider({ rpcUrl }));
       engine.start();
       return new Web3(engine);

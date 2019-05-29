@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-transport-webauthn
+## trustcrypto/hw-transport-webauthn
 
-Allows to communicate with Ledger Hardware Wallets.
+Allows to communicate with onlykey Hardware Wallets.
 
 **[Web]** **(WebAuthn)** – WebAuthn api. [check browser support](https://caniuse.com/webauthn).
 
@@ -36,7 +36,7 @@ WebAuthn Transport implementation
 #### Examples
 
 ```javascript
-import TransportWebAuthn from "@ledgerhq/hw-transport-webauthn";
+import TransportWebAuthn from "trustcrypto/hw-transport-webauthn";
 ...
 TransportWebAuthn.create().then(transport => ...)
 ```

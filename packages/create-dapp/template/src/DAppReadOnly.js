@@ -4,7 +4,7 @@ import { getReadOnlyWeb3 } from "./wallets";
 
 /**
  * this is a simpler way to show use the contracts
- * without being logged in via metamask or ledger device.
+ * without being logged in via metamask or onlykey device.
  * NB: we can't sign transaction but we can still read the contract.
  */
 export default class DappReadOnly extends Component {

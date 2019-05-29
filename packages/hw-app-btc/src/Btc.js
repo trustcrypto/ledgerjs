@@ -5,7 +5,7 @@
 // - try to avoid every place we do hex<>Buffer conversion. also accept Buffer as func parameters (could accept both a string or a Buffer in the API)
 // - there are redundant code across apps (see Eth vs Btc). we might want to factorize it somewhere. also each app apdu call should be abstracted it out as an api
 import { foreach, doIf, asyncWhile, splitPath, eachSeries } from "./utils";
-import type Transport from "@ledgerhq/hw-transport";
+import type Transport from "trustcrypto/hw-transport";
 import createHash from "create-hash";
 
 /**
@@ -33,7 +33,7 @@ const OP_CHECKSIG = 0xac;
  * Bitcoin API.
  *
  * @example
- * import Btc from "@ledgerhq/hw-app-btc";
+ * import Btc from "trustcrypto/hw-app-btc";
  * const btc = new Btc(transport)
  */
 export default class Btc {
@@ -208,7 +208,7 @@ export default class Btc {
       }
 
       // Handle case when no script length: we still want to pass the sequence
-      // relatable: https://github.com/LedgerHQ/ledger-live-desktop/issues/1386
+      // relatable: https://github.com/trustcrypto/onlykey-live-desktop/issues/1386
       if (script.length === 0) {
         scriptBlocks.push(sequence);
       }

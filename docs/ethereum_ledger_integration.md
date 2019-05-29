@@ -1,21 +1,21 @@
-# How to integrate the Ledger device with a Ethereum Web Application
+# How to integrate the onlykey device with a Ethereum Web Application
 
-This is a quick guide to show how to integrate Ledger Ethereum libraries into an existing web application.
+This is a quick guide to show how to integrate onlykey Ethereum libraries into an existing web application.
 
-If you are starting a new DApp project from scratch, or simply are beginning in this Ethereum Smart Contract world, we have made [`create-dapp` **Starter Kit**](https://www.npmjs.com/package/create-dapp) for you, it comes with a out-of-the-box support of Ledger and MetaMask and shows a complete smart contract example (that allows to get/set a value globally).
+If you are starting a new DApp project from scratch, or simply are beginning in this Ethereum Smart Contract world, we have made [`create-dapp` **Starter Kit**](https://www.npmjs.com/package/create-dapp) for you, it comes with a out-of-the-box support of onlykey and MetaMask and shows a complete smart contract example (that allows to get/set a value globally).
 
-Whether you want to integrate on an existing app or bootstrap it from scratch with our starter kit, the follow guide will drive you to important part on how things work with the Ledger.
+Whether you want to integrate on an existing app or bootstrap it from scratch with our starter kit, the follow guide will drive you to important part on how things work with the onlykey.
 
 ## Prerequisites of the guide
 
 * you have experience in JavaScript and a setup for ES6 / Babel. see https://babeljs.io/
-* You have a Ledger Device and know how to use it. See our guides: https://support.ledgerwallet.com
+* You have a onlykey Device and know how to use it. See our guides: https://support.onlykeywallet.com
 
 ## Important checklist
 
-* On the Ledger device, you need to open the **Ethereum app** (available by default, install it with the Ledger Manager otherwise).
+* On the onlykey device, you need to open the **Ethereum app** (available by default, install it with the onlykey Manager otherwise).
 * For web app that run in browser:
-  * **You need your webapp to run in HTTPS**: the ledger device uses U2F API that requires you to run. It will also only work in Chrome and Safari currently (but Firefox is on its way on implementing U2F, you can still try the Firefox U2F extension)
+  * **You need your webapp to run in HTTPS**: the onlykey device uses U2F API that requires you to run. It will also only work in Chrome and Safari currently (but Firefox is on its way on implementing U2F, you can still try the Firefox U2F extension)
   * set **Browser Support** to **Yes** in Settings of the Eth app.
 * For a smart contract, you will also need to set **Contract data** to **Yes** in Settings of the Eth app.
 
@@ -25,8 +25,8 @@ Whether you want to integrate on an existing app or bootstrap it from scratch wi
 import Web3 from "web3";
 import ProviderEngine from "web3-provider-engine";
 import FetchSubprovider from "web3-provider-engine/subproviders/fetch";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
-import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
+import createonlykeySubprovider from "trustcrypto/web3-subprovider";
 
 const rpcUrl = "http://127.0.0.1:8545";
 const networkId = 1337;
@@ -34,11 +34,11 @@ const networkId = 1337;
 function createWeb3() {
   const engine = new ProviderEngine();
   const getTransport = () => TransportU2F.create();
-  const ledger = createLedgerSubprovider(getTransport, {
+  const onlykey = createonlykeySubprovider(getTransport, {
     networkId,
     accountsLength: 5
   });
-  engine.addProvider(ledger);
+  engine.addProvider(onlykey);
   engine.addProvider(new FetchSubprovider({ rpcUrl }));
   engine.start();
   return new Web3(engine);
@@ -47,7 +47,7 @@ function createWeb3() {
 
 ### Libraries
 
-There are 2 libraries you will probably need for your project, one is `web3` that implements a common interface to deal with Ethereum network and the other is `web3-provider-engine` (from MetaMask) because it provides building blocks to combine different providers (in our example the Ledger with a RPC API).
+There are 2 libraries you will probably need for your project, one is `web3` that implements a common interface to deal with Ethereum network and the other is `web3-provider-engine` (from MetaMask) because it provides building blocks to combine different providers (in our example the onlykey with a RPC API).
 
 ```js
 import Web3 from "web3";
@@ -55,11 +55,11 @@ import ProviderEngine from "web3-provider-engine";
 import FetchSubprovider from "web3-provider-engine/subproviders/fetch";
 ```
 
-Now, you can use the `@ledgerhq/web3-subprovider` library that implements a subprovider for `web3-provider-engine`. We'll also need a "transport", in our case it will be U2F:
+Now, you can use the `trustcrypto/web3-subprovider` library that implements a subprovider for `web3-provider-engine`. We'll also need a "transport", in our case it will be U2F:
 
 ```js
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
-import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
+import createonlykeySubprovider from "trustcrypto/web3-subprovider";
 ```
 
 ### Configuration
@@ -86,18 +86,18 @@ const networkId = 3;
 function createWeb3() {
   const engine = new ProviderEngine();
   const getTransport = () => TransportU2F.create();
-  const ledger = createLedgerSubprovider(getTransport, {
+  const onlykey = createonlykeySubprovider(getTransport, {
     networkId,
     accountsLength: 5
   });
-  engine.addProvider(ledger);
+  engine.addProvider(onlykey);
   engine.addProvider(new FetchSubprovider({ rpcUrl }));
   engine.start();
   return new Web3(engine);
 }
 ```
 
-`createLedgerSubprovider` have some options:
+`createonlykeySubprovider` have some options:
 
 ```js
 {
@@ -120,11 +120,11 @@ Once you have created your `web3` instance, you can use it like in any Ethereum 
 
 ## Vanilla signing a transaction
 
-There is also a way to interoperate with the Ledger device without using web3. Basically if you can have the Transaction hex that you want to sign on the device.
+There is also a way to interoperate with the onlykey device without using web3. Basically if you can have the Transaction hex that you want to sign on the device.
 
 ```js
-import AppEth from "@ledgerhq/hw-app-eth";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import AppEth from "trustcrypto/hw-app-eth";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
 
 async function signTransaction(txHex) {
   await transport = TransportU2F.create();
@@ -136,12 +136,12 @@ async function signTransaction(txHex) {
 }
 ```
 
-This is for more advanced usage only as it's way more low level. You might want to checkout our `@ledgerhq/web3-subprovider` implementation as well as the usage of `ethereumjs-tx` to help you out.
+This is for more advanced usage only as it's way more low level. You might want to checkout our `trustcrypto/web3-subprovider` implementation as well as the usage of `ethereumjs-tx` to help you out.
 
 ## Conclusion
 
-This guide was focused on Web and U2F, but we also have support for **Node.js** and **React Native**, so if you want to go there, you might just replace "TransportU2F" / "transport-u2f" by any of the relevant Transport, find more on https://github.com/LedgerHQ/ledgerjs .
-**Typically, if you write an Electron app**, you should use `@ledgerhq/hw-transport-node-hid` instead of U2F.
+This guide was focused on Web and U2F, but we also have support for **Node.js** and **React Native**, so if you want to go there, you might just replace "TransportU2F" / "transport-u2f" by any of the relevant Transport, find more on https://github.com/trustcrypto/onlykeyjs .
+**Typically, if you write an Electron app**, you should use `trustcrypto/hw-transport-node-hid` instead of U2F.
 In the future, we might also see web-usb and web-bluetooth technologies emerging, how cool will that be?
 
-Have fun experimenting things with the Ledger, can't wait to see all the new Ethereum applications shipped in the future.
+Have fun experimenting things with the onlykey, can't wait to see all the new Ethereum applications shipped in the future.

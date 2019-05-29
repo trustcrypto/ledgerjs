@@ -1,4 +1,4 @@
-import { listen } from "@ledgerhq/logs";
+import { listen } from "trustcrypto/logs";
 import testBtc from "./testBtc";
 import testBtc2 from "./testBtc2";
 import testBtc3 from "./testBtc3";

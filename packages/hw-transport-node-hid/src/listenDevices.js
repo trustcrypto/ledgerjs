@@ -1,7 +1,7 @@
 // @flow
 
 import EventEmitter from "events";
-import { log } from "@ledgerhq/logs";
+import { log } from "trustcrypto/logs";
 import usb from "usb";
 import debounce from "lodash/debounce";
 import getDevices from "./getDevices";

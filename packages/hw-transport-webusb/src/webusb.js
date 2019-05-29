@@ -1,24 +1,24 @@
 // @flow
-import { ledgerUSBVendorId } from "@ledgerhq/devices";
+import { onlykeyUSBVendorId } from "trustcrypto/devices";
 
-const ledgerDevices = [{ vendorId: ledgerUSBVendorId }];
+const onlykeyDevices = [{ vendorId: onlykeyUSBVendorId }];
 
-export async function requestLedgerDevice(): Promise<USBDevice> {
+export async function requestonlykeyDevice(): Promise<USBDevice> {
   // $FlowFixMe
-  const device = await navigator.usb.requestDevice({ filters: ledgerDevices });
+  const device = await navigator.usb.requestDevice({ filters: onlykeyDevices });
   return device;
 }
 
-export async function getLedgerDevices(): Promise<USBDevice[]> {
+export async function getonlykeyDevices(): Promise<USBDevice[]> {
   // $FlowFixMe
   const devices = await navigator.usb.getDevices();
-  return devices.filter(d => d.vendorId === ledgerUSBVendorId);
+  return devices.filter(d => d.vendorId === onlykeyUSBVendorId);
 }
 
-export async function getFirstLedgerDevice(): Promise<USBDevice> {
-  const existingDevices = await getLedgerDevices();
+export async function getFirstonlykeyDevice(): Promise<USBDevice> {
+  const existingDevices = await getonlykeyDevices();
   if (existingDevices.length > 0) return existingDevices[0];
-  return requestLedgerDevice();
+  return requestonlykeyDevice();
 }
 
 export const isSupported = (): Promise<boolean> =>

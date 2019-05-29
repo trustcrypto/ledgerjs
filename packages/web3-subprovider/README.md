@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-## @ledgerhq/web3-subprovider
+## trustcrypto/web3-subprovider
 
-Library for Ledger Hardware Wallets.
+Library for onlykey Hardware Wallets.
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
 ## API
 
@@ -15,7 +15,7 @@ Library for Ledger Hardware Wallets.
 
 -   [SubproviderOptions](#subprovideroptions)
     -   [Properties](#properties)
--   [createLedgerSubprovider](#createledgersubprovider)
+-   [createonlykeySubprovider](#createonlykeysubprovider)
     -   [Parameters](#parameters)
     -   [Examples](#examples)
 
@@ -31,9 +31,9 @@ Type: {networkId: [number](https://developer.mozilla.org/docs/Web/JavaScript/Ref
 -   `accountsLength` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** 
 -   `accountsOffset` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** 
 
-### createLedgerSubprovider
+### createonlykeySubprovider
 
-Create a HookedWalletSubprovider for Ledger devices.
+Create a HookedWalletSubprovider for onlykey devices.
 
 #### Parameters
 
@@ -44,16 +44,16 @@ Create a HookedWalletSubprovider for Ledger devices.
 
 ```javascript
 import Web3 from "web3";
-import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import createonlykeySubprovider from "trustcrypto/web3-subprovider";
+import TransportU2F from "trustcrypto/hw-transport-u2f";
 import ProviderEngine from "web3-provider-engine";
 import RpcSubprovider from "web3-provider-engine/subproviders/rpc";
 const engine = new ProviderEngine();
 const getTransport = () => TransportU2F.create();
-const ledger = createLedgerSubprovider(getTransport, {
+const onlykey = createonlykeySubprovider(getTransport, {
 accountsLength: 5
 });
-engine.addProvider(ledger);
+engine.addProvider(onlykey);
 engine.addProvider(new RpcSubprovider({ rpcUrl }));
 engine.start();
 const web3 = new Web3(engine);

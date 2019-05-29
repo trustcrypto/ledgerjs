@@ -1,4 +1,4 @@
-package com.ledgerwallet.hid;
+package com.onlykeywallet.hid;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

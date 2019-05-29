@@ -1,19 +1,19 @@
 // @flow
 /* eslint-disable prefer-template */
 
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "trustcrypto/hw-transport";
 import {
   DisconnectedDevice,
   TransportOpenUserCancelled
-} from "@ledgerhq/errors";
+} from "trustcrypto/errors";
 import {
   getBluetoothServiceUuids,
   getInfosForServiceUuid
-} from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
-import { sendAPDU } from "@ledgerhq/devices/lib/ble/sendAPDU";
-import { receiveAPDU } from "@ledgerhq/devices/lib/ble/receiveAPDU";
-import { log } from "@ledgerhq/logs";
+} from "trustcrypto/devices";
+import type { DeviceModel } from "trustcrypto/devices";
+import { sendAPDU } from "trustcrypto/devices/lib/ble/sendAPDU";
+import { receiveAPDU } from "trustcrypto/devices/lib/ble/receiveAPDU";
+import { log } from "trustcrypto/logs";
 import { Observable, defer, merge, from } from "rxjs";
 import { share, ignoreElements, first, map, tap } from "rxjs/operators";
 import type { Device, Characteristic } from "./types";
@@ -158,7 +158,7 @@ async function open(deviceOrId: Device | string, needsReconnect: boolean) {
 /**
  * react-native bluetooth BLE implementation
  * @example
- * import BluetoothTransport from "@ledgerhq/hw-transport-web-ble";
+ * import BluetoothTransport from "trustcrypto/hw-transport-web-ble";
  */
 export default class BluetoothTransport extends Transport<Device | string> {
   static isSupported = (): Promise<boolean> =>
@@ -177,7 +177,7 @@ export default class BluetoothTransport extends Transport<Device | string> {
   static list = (): * => Promise.resolve([]);
 
   /**
-   * Scan for Ledger Bluetooth devices.
+   * Scan for onlykey Bluetooth devices.
    * On this web implementation, it only emits ONE device, the one that was selected in the UI (if any).
    */
   static listen(observer: *) {

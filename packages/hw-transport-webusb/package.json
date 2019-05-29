@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-transport-webusb",
+  "name": "trustcrypto/hw-transport-webusb",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet WebUSB implementation of the communication layer",
+  "description": "onlykey Hardware Wallet WebUSB implementation of the communication layer",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "webusb",
     "NanoS",
     "Blue",
@@ -12,22 +12,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/TransportWebUSB.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/devices": "^4.60.3",
-    "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/hw-transport": "^4.60.3",
-    "@ledgerhq/logs": "^4.60.3"
+    "trustcrypto/devices": "^4.60.3",
+    "trustcrypto/errors": "^4.60.0",
+    "trustcrypto/hw-transport": "^4.60.3",
+    "trustcrypto/logs": "^4.60.3"
   },
   "devDependencies": {
     "flow-bin": "^0.98.1"

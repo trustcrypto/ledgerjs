@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-app-eth
+## trustcrypto/hw-app-eth
 
-Ledger Hardware Wallet ETH JavaScript bindings.
+onlykey Hardware Wallet ETH JavaScript bindings.
 
 ## API
 
@@ -61,7 +61,7 @@ Ethereum API
 #### Examples
 
 ```javascript
-import Eth from "@ledgerhq/hw-app-eth";
+import Eth from "trustcrypto/hw-app-eth";
 const eth = new Eth(transport)
 ```
 
@@ -99,7 +99,7 @@ calling this contract address to display the proper token information to the use
 ##### Examples
 
 ```javascript
-import { byContractAddress } from "@ledgerhq/hw-app-eth/erc20"
+import { byContractAddress } from "trustcrypto/hw-app-eth/erc20"
 const zrxInfo = byContractAddress("0xe41d2489571d322189246dafa5ebde1f4699f498")
 if (zrxInfo) await appEth.provideERC20TokenInformation(zrxInfo)
 const signed = await appEth.signTransaction(path, rawTxHex)

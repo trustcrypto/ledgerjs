@@ -1,5 +1,5 @@
 
-package com.ledgerwallet.hid;
+package com.onlykeywallet.hid;
 
 import android.hardware.usb.UsbDeviceConnection;
 import android.hardware.usb.UsbEndpoint;
@@ -26,7 +26,7 @@ public class HIDDevice {
     private UsbEndpoint out;
     private byte transferBuffer[];
     private boolean debug;
-    private boolean ledger;
+    private boolean onlykey;
     private ExecutorService executor;
 
     public HIDDevice(UsbManager manager, UsbDevice device) {
@@ -62,7 +62,7 @@ public class HIDDevice {
                     byte[] responseData = null;
                     int offset = 0;
                     int responseSize;
-                    byte[] command = LedgerHelper.wrapCommandAPDU(LEDGER_DEFAULT_CHANNEL, commandSource, HID_BUFFER_SIZE);
+                    byte[] command = onlykeyHelper.wrapCommandAPDU(onlykey_DEFAULT_CHANNEL, commandSource, HID_BUFFER_SIZE);
                     if (debug) {
                         Log.d("SHIDDevice", "=> " + toHex(command));
                     }
@@ -88,7 +88,7 @@ public class HIDDevice {
                         throw new Exception("I/O error");
                     }
 
-                    while ((responseData = LedgerHelper.unwrapResponseAPDU(LEDGER_DEFAULT_CHANNEL, response.toByteArray(),
+                    while ((responseData = onlykeyHelper.unwrapResponseAPDU(onlykey_DEFAULT_CHANNEL, response.toByteArray(),
                             HID_BUFFER_SIZE)) == null) {
                         responseBuffer.clear();
                         if (!request.queue(responseBuffer, HID_BUFFER_SIZE)) {
@@ -144,7 +144,7 @@ public class HIDDevice {
     }
 
     private static final int HID_BUFFER_SIZE = 64;
-    private static final int LEDGER_DEFAULT_CHANNEL = 1;
+    private static final int onlykey_DEFAULT_CHANNEL = 1;
     private static final int SW1_DATA_AVAILABLE = 0x61;
 
 }

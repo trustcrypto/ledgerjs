@@ -1,13 +1,13 @@
 //@flow
 
 import EventEmitter from "events";
-import type { DeviceModel } from "@ledgerhq/devices";
+import type { DeviceModel } from "trustcrypto/devices";
 import {
   TransportError,
   StatusCodes,
   getAltStatusMessage,
   TransportStatusError
-} from "@ledgerhq/errors";
+} from "trustcrypto/errors";
 
 export {
   TransportError,
@@ -151,7 +151,7 @@ TransportFoo.open(descriptor).then(transport => ...)
    */
   setDebugMode() {
     console.warn(
-      "setDebugMode is deprecated. use @ledgerhq/logs instead. No logs are emitted in this anymore."
+      "setDebugMode is deprecated. use trustcrypto/logs instead. No logs are emitted in this anymore."
     );
   }
 
@@ -298,7 +298,7 @@ TransportFoo.create().then(transport => ...)
       if (_appAPIlock) {
         return Promise.reject(
           new TransportError(
-            "Ledger Device is busy (lock " + _appAPIlock + ")",
+            "onlykey Device is busy (lock " + _appAPIlock + ")",
             "TransportLocked"
           )
         );
@@ -313,6 +313,6 @@ TransportFoo.create().then(transport => ...)
     };
   }
 
-  static ErrorMessage_ListenTimeout = "No Ledger device found (timeout)";
-  static ErrorMessage_NoDeviceFound = "No Ledger device found";
+  static ErrorMessage_ListenTimeout = "No onlykey device found (timeout)";
+  static ErrorMessage_NoDeviceFound = "No onlykey device found";
 }

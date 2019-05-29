@@ -1,9 +1,9 @@
 //@flow
 
-import Transport from "@ledgerhq/hw-transport";
-import { TransportError } from "@ledgerhq/errors";
-import { wrapApdu } from "@ledgerhq/devices/lib/scrambling";
-import { log } from "@ledgerhq/logs";
+import Transport from "trustcrypto/hw-transport";
+import { TransportError } from "trustcrypto/errors";
+import { wrapApdu } from "trustcrypto/devices/lib/scrambling";
+import { log } from "trustcrypto/logs";
 
 const attemptExchange = (
   apdu: Buffer,
@@ -44,7 +44,7 @@ const attemptExchange = (
 /**
  * WebAuthn Transport implementation
  * @example
- * import TransportWebAuthn from "@ledgerhq/hw-transport-webauthn";
+ * import TransportWebAuthn from "trustcrypto/hw-transport-webauthn";
  * ...
  * TransportWebAuthn.create().then(transport => ...)
  */

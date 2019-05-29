@@ -1,4 +1,4 @@
-import Btc from "@ledgerhq/hw-app-btc";
+import Btc from "trustcrypto/hw-app-btc";
 
 const expectedBitcoinAddress = "13KE6TffArLh4fVM6uoQzvsYq5vwetJcVM";
 export default async transport => {
@@ -12,7 +12,7 @@ export default async transport => {
         result.bitcoinAddress
     );
     throw new Error(
-      "snapshot test can only be run with a Ledger device set up with the same testing seed.\nSee packages/test/README.md for more information."
+      "snapshot test can only be run with a onlykey device set up with the same testing seed.\nSee packages/test/README.md for more information."
     );
   }
 };

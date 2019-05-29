@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-app-str",
+  "name": "trustcrypto/hw-app-str",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Stellar Application API",
+  "description": "onlykey Hardware Wallet Stellar Application API",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "Stellar",
     "xlm",
     "NanoS",
@@ -13,19 +13,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/Str.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport": "^4.60.3",
+    "trustcrypto/hw-transport": "^4.60.3",
     "base32.js": "^0.1.0",
     "sha.js": "^2.3.6",
     "tweetnacl": "^1.0.0"

@@ -1,30 +1,30 @@
 {
-  "name": "@ledgerhq/hw-transport-mocker",
+  "name": "trustcrypto/hw-transport-mocker",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet mocker utilities used for tests",
+  "description": "onlykey Hardware Wallet mocker utilities used for tests",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "NanoS",
     "Blue",
     "Hardware Wallet"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport": "^4.60.3",
-    "@ledgerhq/logs": "^4.60.3"
+    "trustcrypto/hw-transport": "^4.60.3",
+    "trustcrypto/logs": "^4.60.3"
   },
   "devDependencies": {
     "flow-bin": "^0.98.1"

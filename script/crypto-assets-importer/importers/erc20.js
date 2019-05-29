@@ -28,8 +28,8 @@ module.exports = {
   loader: ({ folder, id }) =>
     Promise.all([
       readFileJSON(path.join(folder, id, "common.json")),
-      readFileJSON(path.join(folder, id, "ledger_signature.json"))
-    ]).then(([common, ledgerSignature]) => {
+      readFileJSON(path.join(folder, id, "onlykey_signature.json"))
+    ]).then(([common, onlykeySignature]) => {
       const decimals = asUint4be(common.decimals);
       const contractAddress = Buffer.from(
         common.contract_address.slice(2),
@@ -37,7 +37,7 @@ module.exports = {
       );
       const ticker = Buffer.from(common.ticker, "ascii");
       const chainId = asUint4be(inferChainId(common));
-      const signature = Buffer.from(ledgerSignature, "hex");
+      const signature = Buffer.from(onlykeySignature, "hex");
       return Buffer.concat([
         Buffer.from([ticker.length]),
         ticker,

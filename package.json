@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ledger-libs",
+  "name": "onlykey-libs",
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
@@ -16,7 +16,7 @@
     "prettier-diff": "prettier --list-different 'packages/*/src/**/*.js'",
     "doc": "lerna run doc",
     "lint": "eslint packages/**/src",
-    "flow": "lerna --ignore @ledgerhq/test --concurrency 1 run flow",
+    "flow": "lerna --ignore trustcrypto/test --concurrency 1 run flow",
     "build": "BABEL_ENV=production && lerna run build",
     "watch": "lerna run --parallel watch",
     "clean": "rm -rf node_modules packages/*/node_modules/ packages/*/flow-typed/ packages/*/lib flow-typed",

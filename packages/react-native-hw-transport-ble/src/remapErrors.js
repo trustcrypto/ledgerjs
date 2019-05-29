@@ -1,5 +1,5 @@
 // @flow
-import { DisconnectedDevice } from "@ledgerhq/errors";
+import { DisconnectedDevice } from "trustcrypto/errors";
 
 export const remapError = (error: ?Error) => {
   if (!error || !error.message) return error;

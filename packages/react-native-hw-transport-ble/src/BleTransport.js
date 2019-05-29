@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable prefer-template */
 
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "trustcrypto/hw-transport";
 import {
   BleManager,
   ConnectionPriority,
@@ -10,19 +10,19 @@ import {
 import {
   getBluetoothServiceUuids,
   getInfosForServiceUuid
-} from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
+} from "trustcrypto/devices";
+import type { DeviceModel } from "trustcrypto/devices";
 
-import { sendAPDU } from "@ledgerhq/devices/lib/ble/sendAPDU";
-import { receiveAPDU } from "@ledgerhq/devices/lib/ble/receiveAPDU";
-import { log } from "@ledgerhq/logs";
+import { sendAPDU } from "trustcrypto/devices/lib/ble/sendAPDU";
+import { receiveAPDU } from "trustcrypto/devices/lib/ble/receiveAPDU";
+import { log } from "trustcrypto/logs";
 import { Observable, defer, merge, from } from "rxjs";
 import { share, ignoreElements, first, map, tap } from "rxjs/operators";
 import {
   CantOpenDevice,
   TransportError,
   DisconnectedDeviceDuringOperation
-} from "@ledgerhq/errors";
+} from "trustcrypto/errors";
 import type { Device, Characteristic } from "./types";
 import { monitorCharacteristic } from "./monitorCharacteristic";
 import { awaitsBleOn } from "./awaitsBleOn";
@@ -256,7 +256,7 @@ async function open(deviceOrId: Device | string, needsReconnect: boolean) {
 /**
  * react-native bluetooth BLE implementation
  * @example
- * import BluetoothTransport from "@ledgerhq/react-native-hw-transport-ble";
+ * import BluetoothTransport from "trustcrypto/react-native-hw-transport-ble";
  */
 export default class BluetoothTransport extends Transport<Device | string> {
   /**
@@ -292,7 +292,7 @@ export default class BluetoothTransport extends Transport<Device | string> {
   };
 
   /**
-   * Scan for bluetooth Ledger devices
+   * Scan for bluetooth onlykey devices
    */
   static listen(observer: *) {
     log("ble-verbose", "listen...");

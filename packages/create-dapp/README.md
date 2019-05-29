@@ -1,6 +1,6 @@
-# Ledger DApp Ethereum starter kit
+# onlykey DApp Ethereum starter kit
 
-Welcome to Ledger DApp starter kit, web app backed by Ethereum smart contract. Out of the box support of Ledger devices and MetaMask.
+Welcome to onlykey DApp starter kit, web app backed by Ethereum smart contract. Out of the box support of onlykey devices and MetaMask.
 
 **bootstrap a project with:**
 

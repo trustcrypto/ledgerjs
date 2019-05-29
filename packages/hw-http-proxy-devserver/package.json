@@ -1,10 +1,10 @@
 {
-  "name": "@ledgerhq/hw-http-proxy-devserver",
+  "name": "trustcrypto/hw-http-proxy-devserver",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet debug communication layer http proxy (for development only)",
+  "description": "onlykey Hardware Wallet debug communication layer http proxy (for development only)",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "onlykey",
+    "onlykeyWallet",
     "debug",
     "proxy",
     "http",
@@ -14,23 +14,23 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
   "main": "lib/cmd.js",
   "bin": {
-    "ledger-hw-http-proxy-devserver": "bin.js"
+    "onlykey-hw-http-proxy-devserver": "bin.js"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport-mocker": "^4.60.3",
-    "@ledgerhq/hw-transport-node-hid": "^4.60.3",
+    "trustcrypto/hw-transport-mocker": "^4.60.3",
+    "trustcrypto/hw-transport-node-hid": "^4.60.3",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
     "command-line-args": "^5.1.1",

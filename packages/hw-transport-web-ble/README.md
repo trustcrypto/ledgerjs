@@ -1,11 +1,11 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/hw-transport-web-ble
+## trustcrypto/hw-transport-web-ble
 
-Allows to communicate with Ledger Hardware Wallets.
+Allows to communicate with onlykey Hardware Wallets.
 
 **[Web]** **(Bluetooth)** – [check browser support](https://caniuse.com/web-bluetooth).
 
@@ -45,7 +45,7 @@ react-native bluetooth BLE implementation
 #### Examples
 
 ```javascript
-import BluetoothTransport from "@ledgerhq/hw-transport-web-ble";
+import BluetoothTransport from "trustcrypto/hw-transport-web-ble";
 ```
 
 #### exchange
@@ -70,7 +70,7 @@ an event is emit once and then each time it changes
 
 #### listen
 
-Scan for Ledger Bluetooth devices.
+Scan for onlykey Bluetooth devices.
 On this web implementation, it only emits ONE device, the one that was selected in the UI (if any).
 
 ##### Parameters

@@ -1,7 +1,7 @@
 // @flow
 import { Observable } from "rxjs";
 import type { Characteristic } from "./types";
-import { log } from "@ledgerhq/logs";
+import { log } from "trustcrypto/logs";
 
 export const monitorCharacteristic = (
   characteristic: Characteristic

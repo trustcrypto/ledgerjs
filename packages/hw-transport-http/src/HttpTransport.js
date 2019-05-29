@@ -1,8 +1,8 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
-import { TransportError } from "@ledgerhq/errors";
+import Transport from "trustcrypto/hw-transport";
+import { TransportError } from "trustcrypto/errors";
 import axios from "axios";
-import { log } from "@ledgerhq/logs";
+import { log } from "trustcrypto/logs";
 
 /**
  * HTTP transport implementation

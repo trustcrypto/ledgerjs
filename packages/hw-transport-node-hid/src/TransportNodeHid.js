@@ -1,17 +1,17 @@
 //@flow
 
 import HID from "node-hid";
-import Transport from "@ledgerhq/hw-transport";
-import { log } from "@ledgerhq/logs";
+import Transport from "trustcrypto/hw-transport";
+import { log } from "trustcrypto/logs";
 import type {
   Observer,
   DescriptorEvent,
   Subscription
-} from "@ledgerhq/hw-transport";
-import hidFraming from "@ledgerhq/devices/lib/hid-framing";
-import { identifyUSBProductId } from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
-import { TransportError, DisconnectedDevice } from "@ledgerhq/errors";
+} from "trustcrypto/hw-transport";
+import hidFraming from "trustcrypto/devices/lib/hid-framing";
+import { identifyUSBProductId } from "trustcrypto/devices";
+import type { DeviceModel } from "trustcrypto/devices";
+import { TransportError, DisconnectedDevice } from "trustcrypto/errors";
 import getDevices from "./getDevices";
 import listenDevices from "./listenDevices";
 
@@ -24,7 +24,7 @@ const isDisconnectedError = e =>
 /**
  * node-hid Transport implementation
  * @example
- * import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
+ * import TransportNodeHid from "trustcrypto/hw-transport-node-hid";
  * ...
  * TransportNodeHid.create().then(transport => ...)
  */
@@ -60,7 +60,7 @@ export default class TransportNodeHid extends Transport<string> {
    */
   static setListenDevicesDebug = () => {
     console.warn(
-      "setListenDevicesDebug is deprecated. Use @ledgerhq/logs instead. No logs will get emitted there anymore."
+      "setListenDevicesDebug is deprecated. Use trustcrypto/logs instead. No logs will get emitted there anymore."
     );
   };
 

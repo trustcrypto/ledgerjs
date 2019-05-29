@@ -1,7 +1,7 @@
 // @flow
 
-import { BluetoothRequired } from "@ledgerhq/errors";
-import { log } from "@ledgerhq/logs";
+import { BluetoothRequired } from "trustcrypto/errors";
+import { log } from "trustcrypto/logs";
 import timer from "./timer";
 import type { BleManager } from "./types";
 

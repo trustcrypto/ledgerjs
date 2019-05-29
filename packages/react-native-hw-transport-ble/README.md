@@ -1,13 +1,13 @@
 <img src="https://user-images.githubusercontent.com/211411/34776833-6f1ef4da-f618-11e7-8b13-f0697901d6a8.png" height="100" />
 
-[Github](https://github.com/LedgerHQ/ledgerjs/),
-[Ledger Devs Slack](https://ledger-dev.slack.com/)
+[Github](https://github.com/trustcrypto/onlykeyjs/),
+[onlykey Devs Slack](https://onlykey-dev.slack.com/)
 
-## @ledgerhq/react-native-hw-transport-ble
+## trustcrypto/react-native-hw-transport-ble
 
-**Ledger Hardware Wallet Bluetooth BLE transport for React Native.**
+**onlykey Hardware Wallet Bluetooth BLE transport for React Native.**
 
-    yarn add @ledgerhq/react-native-hw-transport-ble
+    yarn add trustcrypto/react-native-hw-transport-ble
 
 ### Pre-requisite
 
@@ -17,7 +17,7 @@
 
 ## Full example
 
-[Click here to browse a full example that can be used as starter kit](https://github.com/LedgerHQ/ledgerjs-examples/tree/master/react-native)
+[Click here to browse a full example that can be used as starter kit](https://github.com/trustcrypto/onlykeyjs-examples/tree/master/react-native)
 
 <img width=300 src="https://user-images.githubusercontent.com/211411/52532385-90a02e00-2d24-11e9-9b94-f552ca350b65.jpg" />
 
@@ -33,7 +33,7 @@ Read again our Pre-requisites, you must set up jsc-android, alternatively you ca
 
 ## Minimal getting started
 
-`@ledgerhq/react-native-hw-transport-ble` works like any of our `@ledgerhq/hw-transport` libraries.
+`trustcrypto/react-native-hw-transport-ble` works like any of our `trustcrypto/hw-transport` libraries.
 
 The difference here is that the listen() is costy and you likely don't want to always scan for devices, you would better save a selected device as "known" to suggest it to user later.
 
@@ -44,7 +44,7 @@ Here is a gist of the most important parts required.
 ### Check for Bluetooth state
 
 ```js
-import TransportBLE from "@ledgerhq/react-native-hw-transport-ble";
+import TransportBLE from "trustcrypto/react-native-hw-transport-ble";
 
 const subscription = TransportBLE.observeState({
   next: e => syncWithUI(e.available),
@@ -75,7 +75,7 @@ const subscription = TransportBLE.listen({
 
 // NB we also recommend the use of RxJS, you can just wrap it like so:
 // Observable.create(TransportBLE.listen).subscribe({ ... })
-// In the future of ledgerjs, we might directly returns Observable.
+// In the future of onlykeyjs, we might directly returns Observable.
 ```
 
 This is the basic idea, obviously you need to call this code in your logic and implement `addDeviceToTheUI(device)`.
@@ -95,7 +95,7 @@ const transport = await TransportBLE.open(device);
 const transport = await TransportBLE.open(deviceId); // deviceId can come from persisted state. It's unique per device
 ```
 
-**and now we can just use the transport like any other Ledger transport!**
+**and now we can just use the transport like any other onlykey transport!**
 
 ## API
 
@@ -136,7 +136,7 @@ react-native bluetooth BLE implementation
 #### Examples
 
 ```javascript
-import BluetoothTransport from "@ledgerhq/react-native-hw-transport-ble";
+import BluetoothTransport from "trustcrypto/react-native-hw-transport-ble";
 ```
 
 #### exchange
@@ -171,7 +171,7 @@ an event is emit once and then listened
 
 #### listen
 
-Scan for bluetooth Ledger devices
+Scan for bluetooth onlykey devices
 
 ##### Parameters
 

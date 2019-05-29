@@ -1,6 +1,6 @@
 /********************************************************************************
- *   Ledger Node JS API
- *   (c) 2017-2018 Ledger
+ *   onlykey Node JS API
+ *   (c) 2017-2018 onlykey
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  ********************************************************************************/
 //@flow
 
-import type Transport from "@ledgerhq/hw-transport";
+import type Transport from "trustcrypto/hw-transport";
 import {
   splitPath,
   foreach,
@@ -53,7 +53,7 @@ const TX_MAX_SIZE = 1540;
  * Stellar API
  *
  * @example
- * import Str from "@ledgerhq/hw-app-str";
+ * import Str from "trustcrypto/hw-app-str";
  * const str = new Str(transport)
  */
 export default class Str {

@@ -7,7 +7,7 @@ const outputFolder = path.join(__dirname, "../../packages/hw-app-eth/data");
 const inputFolder = process.argv[2];
 if (!inputFolder) {
   console.error(
-    "The folder of ledger's crypto-assets is required in parameter"
+    "The folder of onlykey's crypto-assets is required in parameter"
   );
   process.exit(1);
 }
