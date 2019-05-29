@@ -9,10 +9,10 @@ import {
 import {
   getBluetoothServiceUuids,
   getInfosForServiceUuid
-} from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
-import { sendAPDU } from "@ledgerhq/devices/lib/ble/sendAPDU";
-import { receiveAPDU } from "@ledgerhq/devices/lib/ble/receiveAPDU";
+} from "@trustcrypto/devices";
+import type { DeviceModel } from "@trustcrypto/devices";
+import { sendAPDU } from "@trustcrypto/devices/lib/ble/sendAPDU";
+import { receiveAPDU } from "@trustcrypto/devices/lib/ble/receiveAPDU";
 import { log } from "@ledgerhq/logs";
 import { Observable, defer, merge, from } from "rxjs";
 import { share, ignoreElements, first, map, tap } from "rxjs/operators";

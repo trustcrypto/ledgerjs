@@ -1,6 +1,6 @@
 // @flow
 import HID from "node-hid";
-import { ledgerUSBVendorId } from "@ledgerhq/devices";
+import { ledgerUSBVendorId } from "@trustcrypto/devices";
 
 const filterInterface = device =>
   ["win32", "darwin"].includes(process.platform)

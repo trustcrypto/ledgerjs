@@ -5,9 +5,9 @@ import type {
   DescriptorEvent,
   Subscription
 } from "@ledgerhq/hw-transport";
-import hidFraming from "@ledgerhq/devices/lib/hid-framing";
-import { identifyUSBProductId } from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
+import hidFraming from "@trustcrypto/devices/lib/hid-framing";
+import { identifyUSBProductId } from "@trustcrypto/devices";
+import type { DeviceModel } from "@trustcrypto/devices";
 import { log } from "@ledgerhq/logs";
 import {
   TransportOpenUserCancelled,

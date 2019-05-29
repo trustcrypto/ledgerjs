@@ -2,7 +2,7 @@
 
 import Transport from "@ledgerhq/hw-transport";
 import { TransportError } from "@ledgerhq/errors";
-import { wrapApdu } from "@ledgerhq/devices/lib/scrambling";
+import { wrapApdu } from "@trustcrypto/devices/lib/scrambling";
 import { log } from "@ledgerhq/logs";
 
 const attemptExchange = (

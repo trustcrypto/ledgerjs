@@ -34,7 +34,7 @@ const devices = {
     id: "nanoS",
     productName: "Ledger Nano S",
     productIdMM: 1,
-    legacyUsbProductId: 0x0001,
+    legacyUsbProductId: 0x0486,
     usbOnly: true
   },
   nanoX: {
@@ -65,7 +65,7 @@ const devicesList: DeviceModel[] = Object.values(devices);
 /**
  *
  */
-export const ledgerUSBVendorId = 0x2c97;
+export const ledgerUSBVendorId = 0x16c0;
 
 /**
  *

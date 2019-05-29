@@ -8,9 +8,9 @@ import type {
   DescriptorEvent,
   Subscription
 } from "@ledgerhq/hw-transport";
-import hidFraming from "@ledgerhq/devices/lib/hid-framing";
-import { identifyUSBProductId } from "@ledgerhq/devices";
-import type { DeviceModel } from "@ledgerhq/devices";
+import hidFraming from "@trustcrypto/devices/lib/hid-framing";
+import { identifyUSBProductId } from "@trustcrypto/devices";
+import type { DeviceModel } from "@trustcrypto/devices";
 import { TransportError, DisconnectedDevice } from "@ledgerhq/errors";
 import getDevices from "./getDevices";
 import listenDevices from "./listenDevices";

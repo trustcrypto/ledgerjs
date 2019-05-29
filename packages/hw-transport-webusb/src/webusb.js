@@ -1,5 +1,5 @@
 // @flow
-import { ledgerUSBVendorId } from "@ledgerhq/devices";
+import { ledgerUSBVendorId } from "@trustcrypto/devices";
 
 const ledgerDevices = [{ vendorId: ledgerUSBVendorId }];
 

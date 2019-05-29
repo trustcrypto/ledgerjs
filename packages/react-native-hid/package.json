@@ -27,7 +27,7 @@
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/devices": "^4.60.3",
+    "@trustcrypto/devices": "^4.60.3",
     "@ledgerhq/errors": "^4.60.0",
     "@ledgerhq/hw-transport": "^4.60.3",
     "@ledgerhq/logs": "^4.60.3",

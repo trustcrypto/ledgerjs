@@ -1,6 +1,6 @@
 //@flow
 import { NativeModules, DeviceEventEmitter } from "react-native";
-import { ledgerUSBVendorId, identifyUSBProductId } from "@ledgerhq/devices";
+import { ledgerUSBVendorId, identifyUSBProductId } from "@trustcrypto/devices";
 import {
   DisconnectedDeviceDuringOperation,
   DisconnectedDevice

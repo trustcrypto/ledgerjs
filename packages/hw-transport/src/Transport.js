@@ -1,7 +1,7 @@
 //@flow
 
 import EventEmitter from "events";
-import type { DeviceModel } from "@ledgerhq/devices";
+import type { DeviceModel } from "@trustcrypto/devices";
 import {
   TransportError,
   StatusCodes,
