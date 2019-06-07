@@ -1,10 +1,10 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import type {
   Observer,
   DescriptorEvent,
   Subscription
-} from "@ledgerhq/hw-transport";
+} from "@trustcrypto/hw-transport";
 import hidFraming from "@trustcrypto/devices/lib/hid-framing";
 import { identifyUSBProductId } from "@trustcrypto/devices";
 import type { DeviceModel } from "@trustcrypto/devices";
@@ -29,7 +29,7 @@ const endpointNumber = 3;
 /**
  * WebUSB Transport implementation
  * @example
- * import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
+ * import TransportWebUSB from "@trustcrypto/hw-transport-webusb";
  * ...
  * TransportWebUSB.create().then(transport => ...)
  */

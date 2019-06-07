@@ -1,6 +1,6 @@
 //@flow
 import AppEth from "@ledgerhq/hw-app-eth";
-import type Transport from "@ledgerhq/hw-transport";
+import type Transport from "@trustcrypto/hw-transport";
 import HookedWalletSubprovider from "web3-provider-engine/dist/es5/subproviders/hooked-wallet";
 import stripHexPrefix from "strip-hex-prefix";
 import EthereumTx from "ethereumjs-tx";
@@ -56,7 +56,7 @@ const defaultOptions = {
  * @example
 import Web3 from "web3";
 import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 import ProviderEngine from "web3-provider-engine";
 import RpcSubprovider from "web3-provider-engine/subproviders/rpc";
 const engine = new ProviderEngine();

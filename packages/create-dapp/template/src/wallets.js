@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
 import ProviderEngine from "web3-provider-engine";
 import FetchSubprovider from "web3-provider-engine/subproviders/fetch";

@@ -6,8 +6,8 @@ import {
   DisconnectedDevice
 } from "@ledgerhq/errors";
 import { log } from "@ledgerhq/logs";
-import Transport from "@ledgerhq/hw-transport";
-import type { DescriptorEvent } from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
+import type { DescriptorEvent } from "@trustcrypto/hw-transport";
 import { Subject, from, concat } from "rxjs";
 import { mergeMap } from "rxjs/operators";
 

@@ -1,6 +1,6 @@
 //@flow
 
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import { TransportError } from "@ledgerhq/errors";
 import { wrapApdu } from "@trustcrypto/devices/lib/scrambling";
 import { log } from "@ledgerhq/logs";
@@ -44,7 +44,7 @@ const attemptExchange = (
 /**
  * WebAuthn Transport implementation
  * @example
- * import TransportWebAuthn from "@ledgerhq/hw-transport-webauthn";
+ * import TransportWebAuthn from "@trustcrypto/hw-transport-webauthn";
  * ...
  * TransportWebAuthn.create().then(transport => ...)
  */

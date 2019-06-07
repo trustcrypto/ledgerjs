@@ -3,7 +3,7 @@
 [Github](https://github.com/LedgerHQ/ledgerjs/),
 [Ledger Devs Slack](https://ledger-dev.slack.com/)
 
-## @ledgerhq/hw-transport-u2f
+## @trustcrypto/hw-transport-u2f
 
 Allows to communicate with Ledger Hardware Wallets.
 
@@ -35,7 +35,7 @@ U2F web Transport implementation
 #### Examples
 
 ```javascript
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 ...
 TransportU2F.create().then(transport => ...)
 ```

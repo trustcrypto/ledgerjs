@@ -1,13 +1,13 @@
 //@flow
 
 import HID from "node-hid";
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import { log } from "@ledgerhq/logs";
 import type {
   Observer,
   DescriptorEvent,
   Subscription
-} from "@ledgerhq/hw-transport";
+} from "@trustcrypto/hw-transport";
 import hidFraming from "@trustcrypto/devices/lib/hid-framing";
 import { identifyUSBProductId } from "@trustcrypto/devices";
 import type { DeviceModel } from "@trustcrypto/devices";
@@ -24,7 +24,7 @@ const isDisconnectedError = e =>
 /**
  * node-hid Transport implementation
  * @example
- * import TransportNodeHid from "@ledgerhq/hw-transport-node-hid";
+ * import TransportNodeHid from "@trustcrypto/hw-transport-node-hid";
  * ...
  * TransportNodeHid.create().then(transport => ...)
  */

@@ -1,25 +1,21 @@
 {
   "name": "@ledgerhq/hw-hid-cli",
   "version": "4.60.3",
-  "description": "Ledger Hardware Wallet cli utility to send apdu to hid",
+  "description": "OnlyKey cli utility to send apdu to hid",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
     "debug",
     "proxy",
     "http",
-    "NanoS",
-    "Blue",
-    "Hardware Wallet"
+    "OnlyKey"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "https://github.com/trustcrypto/onlykeyjs"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
@@ -29,7 +25,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport-node-hid": "^4.60.3",
+    "@trustcrypto/hw-transport-node-hid": "^4.60.3",
     "babel-polyfill": "^6.26.0"
   },
   "devDependencies": {

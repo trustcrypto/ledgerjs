@@ -1,24 +1,20 @@
 {
-  "name": "@ledgerhq/hw-transport-node-hid-noevents",
-  "version": "4.60.3",
-  "description": "Ledger Hardware Wallet Node implementation of the communication layer, using node-hid. without usb events",
+  "name": "@trustcrypto/hw-transport-node-hid-noevents",
+  "version": "4.60.4",
+  "description": "OnlyKey Node implementation of the communication layer, using node-hid. without usb events",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
+    "OnlyKey",
     "hid",
-    "node-hid",
-    "NanoS",
-    "Blue",
-    "Hardware Wallet"
+    "node-hid"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "git+https://github.com/trustcrypto/onlykeyjs.git"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
@@ -27,7 +23,7 @@
   "dependencies": {
     "@trustcrypto/devices": "^4.60.3",
     "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/hw-transport": "^4.60.3",
+    "@trustcrypto/hw-transport": "^4.60.3",
     "@ledgerhq/logs": "^4.60.3",
     "node-hid": "^0.7.8"
   },
@@ -42,5 +38,9 @@
     "build": "bash ../../script/build.sh",
     "watch": "bash ../../script/watch.sh",
     "doc": "bash ../../script/doc.sh"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "author": ""
 }

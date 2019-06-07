@@ -4,7 +4,7 @@ import getSnapshotJSONFile from "./getSnapshotJSONFile";
 import {
   createTransportReplayer,
   RecordStore
-} from "@ledgerhq/hw-transport-mocker";
+} from "@trustcrypto/hw-transport-mocker";
 import runTests from "./runTests";
 
 // test node hid

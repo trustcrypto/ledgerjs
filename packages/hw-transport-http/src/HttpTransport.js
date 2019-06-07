@@ -1,5 +1,5 @@
 //@flow
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import { TransportError } from "@ledgerhq/errors";
 import axios from "axios";
 import { log } from "@ledgerhq/logs";

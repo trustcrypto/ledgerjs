@@ -1,9 +1,9 @@
 import fs from "fs";
-import TransportHid from "@ledgerhq/hw-transport-node-hid";
+import TransportHid from "@trustcrypto/hw-transport-node-hid";
 import {
   createTransportRecorder,
   RecordStore
-} from "@ledgerhq/hw-transport-mocker";
+} from "@trustcrypto/hw-transport-mocker";
 import getSnapshotJSONFile from "./getSnapshotJSONFile";
 import ensureBtcSnapshotAccount from "./ensureBtcSnapshotAccount";
 import runTests from "./runTests";

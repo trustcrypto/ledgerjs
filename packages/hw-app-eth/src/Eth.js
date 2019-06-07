@@ -19,7 +19,7 @@
 // FIXME drop:
 import { splitPath, foreach } from "./utils";
 import { EthAppPleaseEnableContractData } from "@ledgerhq/errors";
-import type Transport from "@ledgerhq/hw-transport";
+import type Transport from "@trustcrypto/hw-transport";
 
 const remapTransactionRelatedErrors = e => {
   if (e && e.statusCode === 0x6a80) {

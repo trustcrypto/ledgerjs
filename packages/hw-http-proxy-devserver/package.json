@@ -29,8 +29,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport-mocker": "^4.60.3",
-    "@ledgerhq/hw-transport-node-hid": "^4.60.3",
+    "@trustcrypto/hw-transport-mocker": "^4.60.3",
+    "@trustcrypto/hw-transport-node-hid": "^4.60.3",
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.19.0",
     "command-line-args": "^5.1.1",

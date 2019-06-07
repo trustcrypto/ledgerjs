@@ -6,10 +6,10 @@
 
 
 ```js
-// when using "@ledgerhq/hw-transport-node-hid" library you need to go to
+// when using "@trustcrypto/hw-transport-node-hid" library you need to go to
 // Settings -> Browser support in ledger stellar app and set this setting to 'No'
-import Transport from "@ledgerhq/hw-transport-node-hid";
-// import Transport from "@ledgerhq/hw-transport-u2f"; // for browser
+import Transport from "@trustcrypto/hw-transport-node-hid";
+// import Transport from "@trustcrypto/hw-transport-u2f"; // for browser
 import Str from "@ledgerhq/hw-app-str";
 import StellarSdk from "stellar-sdk";
 

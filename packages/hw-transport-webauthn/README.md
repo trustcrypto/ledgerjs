@@ -3,7 +3,7 @@
 [Github](https://github.com/LedgerHQ/ledgerjs/),
 [Ledger Devs Slack](https://ledger-dev.slack.com/)
 
-## @ledgerhq/hw-transport-webauthn
+## @trustcrypto/hw-transport-webauthn
 
 Allows to communicate with Ledger Hardware Wallets.
 
@@ -36,7 +36,7 @@ WebAuthn Transport implementation
 #### Examples
 
 ```javascript
-import TransportWebAuthn from "@ledgerhq/hw-transport-webauthn";
+import TransportWebAuthn from "@trustcrypto/hw-transport-webauthn";
 ...
 TransportWebAuthn.create().then(transport => ...)
 ```

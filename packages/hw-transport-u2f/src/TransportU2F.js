@@ -1,7 +1,7 @@
 //@flow
 
 import { sign, isSupported } from "u2f-api";
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import { log } from "@ledgerhq/logs";
 import { TransportError } from "@ledgerhq/errors";
 
@@ -82,7 +82,7 @@ function isTimeoutU2FError(u2fError) {
 /**
  * U2F web Transport implementation
  * @example
- * import TransportU2F from "@ledgerhq/hw-transport-u2f";
+ * import TransportU2F from "@trustcrypto/hw-transport-u2f";
  * ...
  * TransportU2F.create().then(transport => ...)
  */

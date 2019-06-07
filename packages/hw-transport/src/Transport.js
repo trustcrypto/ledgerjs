@@ -180,9 +180,9 @@ TransportFoo.open(descriptor).then(transport => ...)
     data: Buffer = Buffer.alloc(0),
     statusList: Array<number> = [StatusCodes.OK]
   ): Promise<Buffer> => {
-    if (data.length >= 256) {
+    if (data.length >= 768) {
       throw new TransportError(
-        "data.length exceed 256 bytes limit. Got: " + data.length,
+        "data.length exceed 768 bytes limit. Got: " + data.length,
         "DataLengthTooBig"
       );
     }

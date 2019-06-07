@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable prefer-template */
 
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import {
   DisconnectedDevice,
   TransportOpenUserCancelled
@@ -158,7 +158,7 @@ async function open(deviceOrId: Device | string, needsReconnect: boolean) {
 /**
  * react-native bluetooth BLE implementation
  * @example
- * import BluetoothTransport from "@ledgerhq/hw-transport-web-ble";
+ * import BluetoothTransport from "@trustcrypto/hw-transport-web-ble";
  */
 export default class BluetoothTransport extends Transport<Device | string> {
   static isSupported = (): Promise<boolean> =>

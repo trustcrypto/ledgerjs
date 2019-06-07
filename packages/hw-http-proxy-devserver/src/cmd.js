@@ -2,7 +2,7 @@ import {
   RecordStore,
   createTransportRecorder,
   createTransportReplayer
-} from "@ledgerhq/hw-transport-mocker";
+} from "@trustcrypto/hw-transport-mocker";
 import commandLineArgs from "command-line-args";
 import fs from "fs";
 import http from "http";
@@ -42,7 +42,7 @@ if (mainOptions.file) {
     saveToFile = mainOptions.file;
     recordStore = new RecordStore([]);
     Transport = createTransportRecorder(
-      require("@ledgerhq/hw-transport-node-hid").default,
+      require("@trustcrypto/hw-transport-node-hid").default,
       recordStore
     );
   } else {
@@ -60,7 +60,7 @@ if (mainOptions.file) {
     Transport = createTransportReplayer(recordStore);
   }
 } else {
-  Transport = require("@ledgerhq/hw-transport-node-hid").default;
+  Transport = require("@trustcrypto/hw-transport-node-hid").default;
 }
 
 const ifaces = os.networkInterfaces();

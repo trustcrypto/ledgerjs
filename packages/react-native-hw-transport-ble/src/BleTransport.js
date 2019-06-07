@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable prefer-template */
 
-import Transport from "@ledgerhq/hw-transport";
+import Transport from "@trustcrypto/hw-transport";
 import {
   BleManager,
   ConnectionPriority,

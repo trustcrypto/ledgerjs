@@ -16,7 +16,7 @@
  ********************************************************************************/
 //@flow
 
-import type Transport from "@ledgerhq/hw-transport";
+import type Transport from "@trustcrypto/hw-transport";
 import {
   splitPath,
   foreach,

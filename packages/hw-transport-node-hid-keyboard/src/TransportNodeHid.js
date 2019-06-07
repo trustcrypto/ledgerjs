@@ -18,7 +18,7 @@ const filterInterface = device =>
   ["win32", "darwin"].includes(process.platform)
     ? // $FlowFixMe
       device.usagePage === 0xf1d0
-    : device.interface === 1;
+    : device.interface === 0;
 
 function getDevices(): Array<*> {
   // $FlowFixMe
@@ -105,41 +105,101 @@ export default class TransportNodeHidNoEvents extends Transport<?string> {
     }
   };
 
-  writeHID = (content: Buffer): Promise<void> => {
-    const data = [0x00];
+  writeHID = async (content: Buffer): Promise<void> => {
+    let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const data = [];
+    var seqnum;
     for (let i = 0; i < content.length; i++) {
       data.push(content[i]);
     }
     try {
-      this.device.write(data);
+      for (let i = content.length; i < 70; i++) {
+        data.push(0);
+      }
+      for (var i=0; i<10; i++) {
+        seqnum = 0x80+i;
+        var datachunk = data.slice(i*7,(i*8)+7-i);
+        datachunk.unshift(0);
+        datachunk = datachunk.concat(seqnum);
+        if (seqnum==0x89) {
+          //Todo add crc in bytes 3 - 4
+          datachunk  = [ 0, 0, 0, 0xC1, 0xC2, 0, 0, 255, 0x89];
+        }
+          console.log("sent feature report");
+          console.log(datachunk);
+          this.device.sendFeatureReport(datachunk);
+          var res = this.device.getFeatureReport(0, 8);
+          await wait(50);
+          const buf = Buffer.from(res);
+          console.log("got feature report", + buf.toString("hex"));
+      }
       return Promise.resolve();
     } catch (e) {
       if (isDisconnectedError(e)) {
         this.setDisconnected();
-        return Promise.reject(new DisconnectedDevice(e.message));
+        return Promise.reject(new DisconnectedDevice());
       }
-      return Promise.reject(e);
+      return Promise.reject();
     }
   };
 
-  readHID = (): Promise<Buffer> =>
-    new Promise((resolve, reject) =>
-      this.device.read((e, res) => {
+  readHID = async (): Promise<Buffer> => {
+    let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+    try {
+      console.log("reading response");
+      var step=0;
+      const data = [];
+      while (step<=10) {
+        var res = this.device.getFeatureReport(0, 8);
+        await wait(50);
         if (!res) {
-          return reject(new DisconnectedDevice());
+          return Promise.reject(new DisconnectedDevice());
         }
-        if (e) {
-          if (isDisconnectedError(e)) {
-            this.setDisconnected();
-            return reject(new DisconnectedDevice(e.message));
+        console.log("got feature report")
+        console.log(res);
+        if (res[7] == 0x89 || (res[7] <= 0xaf && res[7] >= 0xa1)) { //Device still processessing request need to delay
+          console.log("1")
+          await wait(50);
+          step=0;
+          console.log("2")
+        } else if (step==0 && res[7] == 0xC0) { // First packet of response
+          console.log("3")
+          for (let i = 0; i < 7; i++) {
+            data.push(res[i]);
           }
-          reject(e);
-        } else {
-          const buffer = Buffer.from(res);
-          resolve(buffer);
+          step=1;
+          console.log("4")
+        } else if (res[7] > 0xC0 && res[7] <= 0xC9) { // 2nd+ packet
+          console.log("5")
+          for (let i = 0; i < 7; i++) {
+            data.push(res[i]);
+          }
+          step++;
+          console.log("6")
+        } else if (res[7] == 0xC0) { // last packet of response
+          console.log("7")
+          var datachunk  = [ 0, 0, 0, 0, 0, 0, 0, 0, 0x8F];
+          this.device.sendFeatureReport(datachunk);
+          this.device.getFeatureReport(0, 8);
+          console.log("8")
+          const buffer = Buffer.from(data);
+          return Promise.resolve(buffer);
+        } else {  // Error?
+          console.log("9")
+          return Promise.reject();
         }
-      })
-    );
+        console.log("fullbuffer");
+        console.log(data);
+      }
+    } catch (e) {
+      if (isDisconnectedError(e)) {
+        this.setDisconnected();
+        return Promise.reject(new DisconnectedDevice());
+      }
+      return Promise.reject();
+    }
+}
 
   /**
    * Exchange with the device using APDU protocol.

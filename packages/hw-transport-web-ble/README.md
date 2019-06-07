@@ -3,7 +3,7 @@
 [Github](https://github.com/LedgerHQ/ledgerjs/),
 [Ledger Devs Slack](https://ledger-dev.slack.com/)
 
-## @ledgerhq/hw-transport-web-ble
+## @trustcrypto/hw-transport-web-ble
 
 Allows to communicate with Ledger Hardware Wallets.
 
@@ -45,7 +45,7 @@ react-native bluetooth BLE implementation
 #### Examples
 
 ```javascript
-import BluetoothTransport from "@ledgerhq/hw-transport-web-ble";
+import BluetoothTransport from "@trustcrypto/hw-transport-web-ble";
 ```
 
 #### exchange

@@ -1,20 +1,5 @@
 // @flow
 
-/**
- * The USB product IDs will be defined as MMII, encoding a model (MM) and an interface bitfield (II)
- *
- ** Model
- * Ledger Nano S : 0x10
- * Ledger Blue : 0x00
- * Ledger Nano X : 0x40
- *
- ** Interface support bitfield
- * Generic HID : 0x01
- * Keyboard HID : 0x02
- * U2F : 0x04
- * CCID : 0x08
- * WebUSB : 0x10
- */
 
 export const IIGenericHID = 0x01;
 export const IIKeyboardHID = 0x02;
@@ -23,39 +8,26 @@ export const IICCID = 0x08;
 export const IIWebUSB = 0x10;
 
 const devices = {
-  blue: {
-    id: "blue",
-    productName: "Ledger Blue",
+  prod: {
+    id: "onlykey",
+    productName: "onlykey",
     productIdMM: 0,
-    legacyUsbProductId: 0x0000,
+    legacyUsbProductId: 0x60fc,
     usbOnly: true
   },
-  nanoS: {
-    id: "nanoS",
-    productName: "Ledger Nano S",
-    productIdMM: 1,
+  dev: {
+    id: "onlykey dev",
+    productName: "onlykey dev",
+    productIdMM: 0,
     legacyUsbProductId: 0x0486,
     usbOnly: true
   },
-  nanoX: {
-    id: "nanoX",
-    productName: "Ledger Nano X",
-    productIdMM: 4,
-    legacyUsbProductId: 0x0004,
-    usbOnly: false,
-    bluetoothSpec: [
-      {
-        // this is the legacy one (prototype version). we will eventually drop it.
-        serviceUuid: "d973f2e0-b19e-11e2-9e96-0800200c9a66",
-        notifyUuid: "d973f2e1-b19e-11e2-9e96-0800200c9a66",
-        writeUuid: "d973f2e2-b19e-11e2-9e96-0800200c9a66"
-      },
-      {
-        serviceUuid: "13d63400-2c97-0004-0000-4c6564676572",
-        notifyUuid: "13d63400-2c97-0004-0001-4c6564676572",
-        writeUuid: "13d63400-2c97-0004-0002-4c6564676572"
-      }
-    ]
+  bootloader: {
+    id: "onlykey bootloader",
+    productName: "onlykey bootloader",
+    productIdMM: 0,
+    legacyUsbProductId: 0x60fc,
+    usbOnly: true
   }
 };
 

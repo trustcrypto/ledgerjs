@@ -33,7 +33,7 @@ Read again our Pre-requisites, you must set up jsc-android, alternatively you ca
 
 ## Minimal getting started
 
-`@ledgerhq/react-native-hw-transport-ble` works like any of our `@ledgerhq/hw-transport` libraries.
+`@ledgerhq/react-native-hw-transport-ble` works like any of our `@trustcrypto/hw-transport` libraries.
 
 The difference here is that the listen() is costy and you likely don't want to always scan for devices, you would better save a selected device as "known" to suggest it to user later.
 

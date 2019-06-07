@@ -1,9 +1,11 @@
 {
-  "name": "@trustcrypto/devices",
-  "version": "4.60.4",
-  "description": "OnlyKey devices",
+  "name": "@trustcrypto/hw-transport-node-hid-keyboard",
+  "version": "1.0.81",
+  "description": "OnlyKey Node implementation of the communication layer, using node-hid with feature reports",
   "keywords": [
-    "OnlyKey"
+    "OnlyKey",
+    "hid",
+    "node-hid"
   ],
   "repository": {
     "type": "git",
@@ -16,15 +18,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "lib/index.js",
+  "main": "lib/TransportNodeHid.js",
   "license": "Apache-2.0",
-  "devDependencies": {
-    "flow-bin": "^0.98.1"
-  },
   "dependencies": {
+    "@trustcrypto/devices": "^4.60.3",
     "@ledgerhq/errors": "^4.60.0",
+    "@trustcrypto/hw-transport": "^4.60.3",
     "@ledgerhq/logs": "^4.60.3",
-    "rxjs": "^6.5.2"
+    "node-hid": "^0.7.8"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "flow-bin": "^0.98.1"
   },
   "scripts": {
     "flow": "flow",

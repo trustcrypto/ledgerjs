@@ -1,5 +1,5 @@
 {
-  "name": "@ledgerhq/hw-transport-u2f",
+  "name": "@trustcrypto/hw-transport-u2f",
   "version": "4.60.3",
   "description": "Ledger Hardware Wallet Web implementation of the communication layer, using U2F api",
   "keywords": [
@@ -27,7 +27,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@ledgerhq/errors": "^4.60.0",
-    "@ledgerhq/hw-transport": "^4.60.3",
+    "@trustcrypto/hw-transport": "^4.60.3",
     "@ledgerhq/logs": "^4.60.3",
     "u2f-api": "0.2.7"
   },

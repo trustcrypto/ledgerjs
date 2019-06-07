@@ -25,7 +25,7 @@ Whether you want to integrate on an existing app or bootstrap it from scratch wi
 import Web3 from "web3";
 import ProviderEngine from "web3-provider-engine";
 import FetchSubprovider from "web3-provider-engine/subproviders/fetch";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
 
 const rpcUrl = "http://127.0.0.1:8545";
@@ -58,7 +58,7 @@ import FetchSubprovider from "web3-provider-engine/subproviders/fetch";
 Now, you can use the `@ledgerhq/web3-subprovider` library that implements a subprovider for `web3-provider-engine`. We'll also need a "transport", in our case it will be U2F:
 
 ```js
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
 ```
 
@@ -124,7 +124,7 @@ There is also a way to interoperate with the Ledger device without using web3. B
 
 ```js
 import AppEth from "@ledgerhq/hw-app-eth";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 
 async function signTransaction(txHex) {
   await transport = TransportU2F.create();
@@ -141,7 +141,7 @@ This is for more advanced usage only as it's way more low level. You might want 
 ## Conclusion
 
 This guide was focused on Web and U2F, but we also have support for **Node.js** and **React Native**, so if you want to go there, you might just replace "TransportU2F" / "transport-u2f" by any of the relevant Transport, find more on https://github.com/LedgerHQ/ledgerjs .
-**Typically, if you write an Electron app**, you should use `@ledgerhq/hw-transport-node-hid` instead of U2F.
+**Typically, if you write an Electron app**, you should use `@trustcrypto/hw-transport-node-hid` instead of U2F.
 In the future, we might also see web-usb and web-bluetooth technologies emerging, how cool will that be?
 
 Have fun experimenting things with the Ledger, can't wait to see all the new Ethereum applications shipped in the future.

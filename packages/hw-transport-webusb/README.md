@@ -3,7 +3,7 @@
 [Github](https://github.com/LedgerHQ/ledgerjs/),
 [Ledger Devs Slack](https://ledger-dev.slack.com/)
 
-## @ledgerhq/hw-transport-webusb
+## @trustcrypto/hw-transport-webusb
 
 Allows to communicate with Ledger Hardware Wallets.
 
@@ -45,7 +45,7 @@ WebUSB Transport implementation
 #### Examples
 
 ```javascript
-import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
+import TransportWebUSB from "@trustcrypto/hw-transport-webusb";
 ...
 TransportWebUSB.create().then(transport => ...)
 ```

@@ -45,7 +45,7 @@ Create a HookedWalletSubprovider for Ledger devices.
 ```javascript
 import Web3 from "web3";
 import createLedgerSubprovider from "@ledgerhq/web3-subprovider";
-import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import TransportU2F from "@trustcrypto/hw-transport-u2f";
 import ProviderEngine from "web3-provider-engine";
 import RpcSubprovider from "web3-provider-engine/subproviders/rpc";
 const engine = new ProviderEngine();

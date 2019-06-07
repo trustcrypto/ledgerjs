@@ -1,5 +1,5 @@
 {
-  "name": "@ledgerhq/hw-transport-mocker",
+  "name": "@trustcrypto/hw-transport-mocker",
   "version": "4.60.3",
   "description": "Ledger Hardware Wallet mocker utilities used for tests",
   "keywords": [
@@ -23,7 +23,7 @@
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "dependencies": {
-    "@ledgerhq/hw-transport": "^4.60.3",
+    "@trustcrypto/hw-transport": "^4.60.3",
     "@ledgerhq/logs": "^4.60.3"
   },
   "devDependencies": {

@@ -1,22 +1,18 @@
 {
-  "name": "@ledgerhq/hw-transport",
-  "version": "4.60.3",
-  "description": "Ledger Hardware Wallet common interface of the communication layer",
+  "name": "@trustcrypto/hw-transport",
+  "version": "4.60.8",
+  "description": "OnlyKey common interface of the communication layer",
   "keywords": [
-    "Ledger",
-    "LedgerWallet",
-    "NanoS",
-    "Blue",
-    "Hardware Wallet"
+    "OnlyKey"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/LedgerHQ/ledgerjs"
+    "url": "git+https://github.com/trustcrypto/onlykeyjs.git"
   },
   "bugs": {
-    "url": "https://github.com/LedgerHQ/ledgerjs/issues"
+    "url": "https://github.com/trustcrypto/onlykeyjs/issues"
   },
-  "homepage": "https://github.com/LedgerHQ/ledgerjs",
+  "homepage": "https://github.com/trustcrypto/onlykeyjs",
   "publishConfig": {
     "access": "public"
   },
@@ -36,5 +32,9 @@
     "build": "bash ../../script/build.sh",
     "watch": "bash ../../script/watch.sh",
     "doc": "bash ../../script/doc.sh"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "author": ""
 }
